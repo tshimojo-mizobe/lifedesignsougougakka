@@ -38,10 +38,11 @@
         embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
       >
-  <a-assets>
-    <!-- 画像をプリロード -->
-    <img id="digitalart" src="https://tshimojo-mizobe.github.io/lifedesignsougougakka/groge.jpg">
-  </a-assets>
+        <a-assets>
+            <video preload="auto" id="vid" response-type="arraybuffer" loop="false" crossorigin webkit-playsinline playsinline controls>
+                <source  src="https://tshimojo-mizobe.github.io/lifedesignsougougakka/ppap.mp4">
+            </video>
+        </a-assets>
         <!-- we use cors proxy to avoid cross-origin problems -->
         <a-nft
           type="nft"
@@ -53,7 +54,7 @@
         >
 
         <a-entity rotation="270 0 0" position="0 0 -353">
-          <a-image width="400" height="353" src="#digitalart"></a-image>
+          <a-image width="400" height="353" src="#vid"></a-image>
         </a-entity>
         </a-nft>
         <a-entity camera></a-entity>
