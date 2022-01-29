@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>2319</title>
+    <title>2324</title>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <style>
@@ -52,6 +52,31 @@
         function playvid() {
             vid.play();
         }
+      document.addEventListener("DOMContentLoaded", function(event) {
+      var scene = document.querySelector("a-scene");
+      var video = document.getElementById("bird");
+
+      if (scene.hasLoaded) {
+        run();
+      } else {
+        scene.addEventListener("loaded", run);
+      }
+
+      function run () {
+        scene.querySelector("#playButton").addEventListener("click", function(e){
+              video.play();
+          });
+      }
+
+    })
+
+    AFRAME.registerComponent('click-stop', {
+    init: function () {
+      this.el.addEventListener('click', function (event) {
+        document.getElementById("bird").pause();
+      });
+    }
+  });
     </style>
 
     <body style="margin : 0px; overflow: hidden;">
@@ -82,6 +107,22 @@
   <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
   <a-video src="https://tshimojo-mizobe.github.io/lifedesignsougougakka/sakuranbo.mp4"></a-video>
         </a-nft>
+        <a-entity
+    id="playButton"
+    geometry="primitive: plane; height: 1; width: 1"
+    material="src: #play"
+    position="-7.3 -1.2 0.6"
+    rotation="0 90 0"
+    ></a-entity>
+
+    <a-entity
+    id="stopButton"
+    click-stop
+    geometry="primitive: plane; height: 1; width: 1"
+    material="src: #stop"
+    position="-7.3 -1.2 -0.67"
+    rotation="0 90 0"
+    ></a-entity>
         <a-entity camera></a-entity>
       </a-scene>
 
