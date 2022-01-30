@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1836</title>
+    <title>1854</title>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-
+  </head>
 
     <body style="margin : 0px; overflow: hidden;">
 
@@ -17,8 +17,6 @@
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
       >
   <a-assets>
-    <!-- 画像をプリロード -->
-    <img id="digitalart" src="https://tshimojo-mizobe.github.io/lifedesignsougougakka/groge.jpg">
                     <video
                     id="vid"
                     src="https://tshimojo-mizobe.github.io/lifedesignsougougakka/sakuranbo.mp4"
@@ -43,11 +41,17 @@
         >
 
         <a-entity rotation="270 0 0" position="0 0 -353">
-          <a-image width="400" height="353" src="#digitalart"></a-image>
+                <a-video
+                    src="#vid"
+                    scale="1 1 1"
+                    position="0 0.1 0"
+                    rotation="-90 0 0"
+                    class="clickable"
+                    gesture-handler
+                ></a-video>
         </a-entity>
         </a-nft>
         <a-entity camera></a-entity>
       </a-scene>
     </body>
-  </head>
 </html>
