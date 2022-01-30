@@ -54,14 +54,20 @@
                     playsinline
                 ></video>
               </a-assets>
-        <a-nft
-          type="nft"
-          url="https://tshimojo-mizobe.github.io/lifedesignsougougakka/LS20021s"
-          smooth="true"
-          smoothCount="10"
-          smoothTolerance=".01"
-          smoothThreshold="5"
-        >
+            <a-marker
+                type="pattern"
+                preset="custom"
+                url="https://tshimojo-mizobe.github.io/lifedesignsougougakka/sakuranbo.mp4"
+                videohandler
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance="0.01"
+                smoothThreshold="5"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
                 <a-video
                     src="#vid"
                     scale="10 10 10"
@@ -70,7 +76,7 @@
                     class="clickable"
                     gesture-handler
                 ></a-video>
-                  </a-nft>
+                  </a-marker>
         <a-entity camera></a-entity>
       </a-scene>
 
