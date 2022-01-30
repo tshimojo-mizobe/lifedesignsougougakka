@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>1808</title>
+    <title>1818</title>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
@@ -39,6 +39,7 @@
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
       >
               <a-assets>
+    <img id="digitalart" src="https://tshimojo-mizobe.github.io/lifedesignsougougakka/groge.jpg">
                 <video
                     id="vid"
                     src="https://tshimojo-mizobe.github.io/lifedesignsougougakka/sakuranbo.mp4"
@@ -61,15 +62,9 @@
           smoothThreshold="5"
         > 
 
-<a-video
-          src="#vid"
-                    scale="1 1 1"
-                    position="0 0 0"
-                    rotation="-90 0 0"
-                    class="clickable"
-                    gesture-handler
-                >
-</a-video>
+    <a-entity rotation=-90 0 0" position="0 0 100">
+      <a-image width="400" height="353" src="#digitalart"></a-image>
+    </a-entity>
                   </a-nft>
         <a-entity camera></a-entity>
       </a-scene>
