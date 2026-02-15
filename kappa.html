@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .container {
+        .image-wrapper {
             width: 100%;
             display: flex;
             justify-content: center; /* 横方向の中央寄せ */
+            align-items: center;     /* 必要に応じて縦方向の中央寄せ */
         }
 
-        .responsive-img {
-            /* ここがポイント：
-               親要素（画面幅）に対して常に85%の幅を維持します 
-            */
-            width: 85%; 
-            height: auto; /* 高さは自動調整して比率を維持 */
+        .full-width-img {
+            /* 画面（親要素）の幅いっぱいに表示 */
+            width: 100%;
+            height: auto; /* アスペクト比を維持 */
             
-            /* オプション：画像が大きくなりすぎないように最大幅を制限する場合 */
-            /* max-width: 1200px; */
+            /* もしPCなどで画像が広がりすぎるのを防ぎたい場合は、
+               以下のコメントアウトを外して数値を調整してください。
+            */
+            /* max-width: 1200px; */ 
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="kappa.png" alt="河童" class="responsive-img">
+    <div class="image-wrapper">
+        <img src="kappa.png" alt="全幅画像" class="full-width-img">
     </div>
 
 </body>
