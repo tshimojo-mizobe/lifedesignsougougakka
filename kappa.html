@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="jp">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LS24011</title>
-  </head>
-  <body>
-	<h2>うすき Yo かいずかん</h2>
-	<p>かっぱ please wait...</p>
-  </body>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* 横方向の中央寄せ */
+        }
+
+        .responsive-img {
+            /* ここがポイント：
+               親要素（画面幅）に対して常に85%の幅を維持します 
+            */
+            width: 85%; 
+            height: auto; /* 高さは自動調整して比率を維持 */
+            
+            /* オプション：画像が大きくなりすぎないように最大幅を制限する場合 */
+            /* max-width: 1200px; */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="kappa.png" alt="河童" class="responsive-img">
+    </div>
+
+</body>
 </html>
