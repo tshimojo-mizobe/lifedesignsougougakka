@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>画像の中央配置と部分リンク</title>
+    <title>複数エリアのリンク設定</title>
     <style>
-        /* 1. 画面全体の中央に配置するための設定 */
         body, html {
             margin: 0;
             padding: 0;
@@ -13,14 +12,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0; /* 背景色は任意 */
+            background-color: #f5f5f5;
         }
 
-        /* 2. 画像コンテナのサイズ設定 */
         .image-container {
             position: relative;
-            width: 90vw; /* 画面幅の90% */
-            line-height: 0; /* 下部の隙間を排除 */
+            width: 90vw; 
+            line-height: 0;
         }
 
         .image-container img {
@@ -29,28 +27,42 @@
             display: block;
         }
 
-        /* 3. 右下4分の1のリンクエリア */
+        /* 共通のリンクエリア設定 */
         .click-area {
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50%;  /* 横幅の半分 */
-            height: 50%; /* 高さの半分 */
-            background-color: rgba(255, 255, 255, 0); /* 完全に透明 */
             cursor: pointer;
+            /* 開発中のデバッグ用（範囲が見えるようにします） */
+            background-color: rgba(255, 0, 0, 0.2); 
             z-index: 10;
         }
 
-        /* デバッグ用：範囲を確認したい場合は下のコメントアウトを外してください */
-        /* .click-area { background-color: rgba(255, 0, 0, 0.3); } */
+        /* エリア1：右下4分の1（さらに一回り小さく設定） */
+        .area-bottom-right {
+            bottom: 5%;   /* 下端から5%浮かす */
+            right: 5%;    /* 右端から5%浮かす */
+            width: 30%;   /* 横幅の30% */
+            height: 30%;  /* 高さの30% */
+        }
+
+        /* エリア2：左上の特定位置 */
+        .area-custom {
+            top: 10%;     /* 上から10%の位置 */
+            left: 10%;    /* 左から10%の位置 */
+            width: 20%;   /* 横幅の20% */
+            height: 15%;  /* 高さの15% */
+            background-color: rgba(0, 0, 255, 0.2); /* 別の色でデバッグ */
+        }
+
     </style>
 </head>
 <body>
 
     <div class="image-container">
-        <img src="kappa.png" alt="メイン画像">
+        <img src="https://via.placeholder.com/1200x800" alt="メイン画像">
         
-        <a href="https://example.com" class="click-area"></a>
+        <a href="https://google.com" class="click-area area-bottom-right" title="右下のリンク"></a>
+
+        <a href="https://youtube.com" class="click-area area-custom" title="左上のリンク"></a>
     </div>
 
 </body>
