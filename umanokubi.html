@@ -1,12 +1,69 @@
 <!DOCTYPE html>
-<html lang="jp">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LS24011</title>
-  </head>
-  <body>
-	<h2>うすき Yo かいずかん</h2>
-	<p>うまのくび please wait...</p>
-  </body>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬の首（うまのくび）</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222222;
+        }
+
+        .image-container {
+            position: relative;
+            width: 90vw; 
+            line-height: 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 共通のリンクエリア設定 */
+        .click-area {
+            position: absolute;
+            cursor: pointer;
+            /* 開発中のデバッグ用（範囲が見えるようにします） */
+            background-color: rgba(255, 0, 0, 0); 
+            z-index: 10;
+        }
+
+        /* エリア1：右下4分の1（さらに一回り小さく設定） */
+        .area-bottom-right {
+            top: 76%;     /* 上から%の位置 */
+            left: 47%;    /* 左から%の位置 */
+            width: 44%;   /* 横幅の% */
+            height: 7%;  /* 高さの% */
+        }
+
+        /* エリア2：左上の特定位置 */
+        .area-custom {
+            top: 86%;     /* 上から%の位置 */
+            left: 47%;    /* 左から%の位置 */
+            width: 44%;   /* 横幅% */
+            height: 7%;  /* 高さ% */
+            background-color: rgba(0, 0, 255, 0); /* 別の色でデバッグ */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img src="umanokubi.png" alt="馬の首（うまのくび）">
+        
+        <a href="https://share.google/B2kW7hubLShG00kUX" class="click-area area-bottom-right" title="出現地へ行く"></a>
+
+        <a href="https://palanar.app/v2/ar_contents/umanokubi" class="click-area area-custom" title="妖怪を呼び出す"></a>
+    </div>
+
+</body>
 </html>
