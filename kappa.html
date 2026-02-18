@@ -3,30 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像の中央配置と部分リンク</title>
     <style>
-        .image-wrapper {
-            width: 100%;
+        /* 1. 画面全体の中央に配置するための設定 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
             display: flex;
-            justify-content: center; /* 横方向の中央寄せ */
-            align-items: center;     /* 必要に応じて縦方向の中央寄せ */
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* 背景色は任意 */
         }
 
-        .full-width-img {
-            /* 画面（親要素）の幅いっぱいに表示 */
-            width: 100%;
-            height: auto; /* アスペクト比を維持 */
-            
-            /* もしPCなどで画像が広がりすぎるのを防ぎたい場合は、
-               以下のコメントアウトを外して数値を調整してください。
-            */
-            /* max-width: 1200px; */ 
+        /* 2. 画像コンテナのサイズ設定 */
+        .image-container {
+            position: relative;
+            width: 90vw; /* 画面幅の90% */
+            line-height: 0; /* 下部の隙間を排除 */
         }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 3. 右下4分の1のリンクエリア */
+        .click-area {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;  /* 横幅の半分 */
+            height: 50%; /* 高さの半分 */
+            background-color: rgba(255, 255, 255, 0); /* 完全に透明 */
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        /* デバッグ用：範囲を確認したい場合は下のコメントアウトを外してください */
+        /* .click-area { background-color: rgba(255, 0, 0, 0.3); } */
     </style>
 </head>
 <body>
 
-    <div class="image-wrapper">
-        <img src="kappa.png" alt="全幅画像" class="full-width-img">
+    <div class="image-container">
+        <img src="kappa.png" alt="メイン画像">
+        
+        <a href="https://example.com" class="click-area"></a>
     </div>
 
 </body>
