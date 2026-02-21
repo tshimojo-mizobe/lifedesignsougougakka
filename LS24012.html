@@ -3,27 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>うすき Yo 怪ずかん</title>
+    <title>うすき Yo 怪図鑑</title>
     <style>
-        /* ブラウザ特有の余白を消す */
         body, html {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* 背景色（任意） */
+            overflow-x: hidden;
         }
 
-        /* 画像の設定 */
         .full-width-image {
-            display: block;    /* 下部の隙間を解消 */
-            width: 100%;       /* 横幅をブラウザいっぱいに */
-            height: auto;      /* 縦横比を維持 */
-            vertical-align: top; /* 上端を揃える */
+            display: block;
+            width: 100%;
+            height: auto;
+            border: none;
+        }
+
+        /* リンク範囲（青い枠など）が表示されないようにする */
+        area {
+            outline: none;
         }
     </style>
 </head>
 <body>
 
-    <img src="top.png" alt="表示画像" class="full-width-image">
+    <img src="top test.png" alt="メニュー画像" class="full-width-image" usemap="#image-map">
+
+    <map name="image-map">
+        <area target="_blank" alt="白殿（しろどの）" title="白殿（しろどの）" href="shirodono.html" coords="146,394,551,694" shape="rect">
+        <area target="_blank" alt="亀城（きじょう）" title="亀城（きじょう）" href="lifedesignsougougakka/kijyou.html" coords="630,394,1035,694" shape="rect">
+        <area target="_blank" alt="リンク3" title="リンク3" href="https://example.com/3" coords="1124,395,1529,695" shape="rect">
+        
+        <area target="_blank" alt="リンク4" title="リンク4" href="https://example.com/4" coords="145,957,550,1257" shape="rect">
+        <area target="_blank" alt="リンク5" title="リンク5" href="https://example.com/5" coords="631,956,1036,1256" shape="rect">
+        <area target="_blank" alt="リンク6" title="リンク6" href="https://example.com/6" coords="1124,957,1529,1257" shape="rect">
+
+        <area target="_blank" alt="リンク7" title="リンク7" href="https://example.com/7" coords="146,1518,551,1818" shape="rect">
+        <area target="_blank" alt="リンク8" title="リンク8" href="https://example.com/8" coords="630,1518,1035,1818" shape="rect">
+        <area target="_blank" alt="リンク9" title="リンク9" href="https://example.com/9" coords="1125,1519,1530,1819" shape="rect">
+
+        <area target="_blank" alt="リンク10" title="リンク10" href="https://example.com/10" coords="146,2079,551,2379" shape="rect">
+        <area target="_blank" alt="リンク11" title="リンク11" href="https://example.com/11" coords="629,2078,1034,2378" shape="rect">
+        <area target="_blank" alt="リンク12" title="リンク12" href="https://example.com/12" coords="1125,2078,1530,2378" shape="rect">
+
+        <area target="_blank" alt="リンク13" title="リンク13" href="https://example.com/13" coords="344,2645,749,2945" shape="rect">
+        <area target="_blank" alt="リンク6" title="リンク14" href="https://example.com/14" coords="918,2645,1323,2945" shape="rect">
+
+        </map>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6.1/jquery.rwdImageMaps.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(e) {
+            $('img[usemap]').rwdImageMaps();
+        });
+    </script>
 
 </body>
 </html>
