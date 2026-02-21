@@ -6,54 +6,80 @@
     <title>うすき Yo 怪図鑑</title>
     <style>
         body, html { margin: 0; padding: 0; }
-        img {
-            display: block;
+
+        /* 画像とリンクを包むコンテナ */
+        .image-container {
+            position: relative;
+            width: 100%;
+            line-height: 0;
+        }
+
+        /* メイン画像 */
+        .main-img {
             width: 100%;
             height: auto;
-            border: none;
+            display: block;
+        }
+
+        /* 透明なリンク（共通設定） */
+        .clickable-area {
+            position: absolute;
+            /* 背景を red、opacity を 0.3 にすると調整時に場所が見やすい */
+            background: rgba(255, 0, 0, 0.3); 
+            display: block;
+            text-decoration: none;
+        }
+
+        /* --- ここから各ボタンの位置調整（%で指定） --- */
+        /* 1段目・左の四角 */
+        .link-01 {
+            top: 2.6%;    /* 上からの位置（縦3521pxに対しての割合） */
+            left: 5.3%;   /* 左からの位置（横1665pxに対しての割合） */
+            width: 16%;   /* ボタンの横幅（%） */
+            height: 3.9%; /* ボタンの縦幅（%） */
+        }
+
+        /* 1段目・中央の四角 */
+        .link-02 {
+            top: 2.6%;
+            left: 22.8%;
+            width: 16%;
+            height: 3.9%;
+            
+        /* 1段目・右の四角 */
+        .link-03 {
+            top: 2.6%;
+            left: 22.8%;
+            width: 16%;
+            height: 3.9%;            
         }
     </style>
 </head>
 <body>
 
-    <img src="top.png" usemap="#image-map" id="target-img">
+<div class="image-container">
+    <img src="top.png" class="main-img" alt="背景画像">
 
-    <map name="image-map">
-        <area target="_blank" alt="白殿（しろどの）" title="白殿（しろどの）" href="shirodono.html" coords="147,396,548,692" shape="rect">
-        <area target="_blank" alt="亀城（きじょう）" title="亀城（きじょう）" href="kijyou.html" coords="634,396,1035,692" shape="rect">
-        <area target="_blank" alt="赤猫の変化（あかねこのへんか）" title="赤猫の変化（あかねこのへんか）" href="akanekonohennka.html" coords="1126,396,1529,692" shape="rect">
-        
-        <area target="_blank" alt="野ぶすま（のぶすま）" title="野ぶすま（のぶすま）" href="nobusuma.html" coords="147,960,548,1256" shape="rect">
-        <area target="_blank" alt="火の玉を食べた男（ひのたまをたべたおとこ）" title="火の玉を食べた男（ひのたまをたべたおとこ）" href="hinotamawotabetaotoko.html" coords="634,960,1035,1256" shape="rect">
-        <area target="_blank" alt="河童（かっぱ）" title="河童（かっぱ）" href="kappa.html" coords="1126,960,1529,1256" shape="rect">
+    <a href="shirodono.html" class="clickable-area link-01" title="白殿（しろどの）"></a>
+    <a href="kijyou.html" class="clickable-area link-02" title="亀城（きじょう）"></a>
+    <a href="akanekonohennka.html" class="clickable-area link-03" title="赤猫の変化（あかねこのへんか）"></a>
 
-        <area target="_blank" alt="三本脚の雉（さんほんあしのきじ）" title="三本脚の雉（さんほんあしのきじ）" href="sannhonnashinokiji.html" coords="147,1516,548,1812" shape="rect">
-        <area target="_blank" alt="小豆洗い（あずきあらい）" title="小豆洗い（あずきあらい）" href="azukiarai.html" coords="634,1516,1035,1812" shape="rect">
-        <area target="_blank" alt="馬の首（うまのくび）" title="馬の首（うまのくび）" href="umanokubi.html" coords="1126,1516,1529,1812" shape="rect">
+    <a href="nobusuma.html" class="clickable-area link-04" title="野ぶすま（のぶすま）"></a>
+    <a href="hinotamawotabetaotoko.html" class="clickable-area link-05" title="火の玉を食べた男（ひのたまをたべたおとこ）"></a>
+    <a href="kappa.html" class="clickable-area link-06" title="河童（かっぱ）"></a>
 
-        <area target="_blank" alt="がもじい" title="がもじい" href="gamoji.html" coords="147,2075,548,2371" shape="rect">
-        <area target="_blank" alt="狸自動車（たぬきじどうしゃ）" title="狸自動車（たぬきじどうしゃ）" href="tanukicar.html" coords="634,2075,1035,2371" shape="rect">
-        <area target="_blank" alt="こーとろ" title="こーとろ" href="kotoro.html" coords="1126,2075,1529,2371" shape="rect">
+    <a href="sannhonnashinokiji.html" class="clickable-area link-07" title="三本脚の雉（さんほんあしのきじ）"></a>
+    <a href="azukiarai.html" class="clickable-area link-08" title="小豆洗い（あずきあらい）"></a>
+    <a href="umanokubi.html" class="clickable-area link-09" title="馬の首（うまのくび）"></a>
 
-        <area target="_blank" alt="路地の狸（ろじのたぬき）" title="路地の狸（ろじのたぬき）" href="rojinotanuki.html" coords="349,2628,750,2924" shape="rect">
-        <area target="_blank" alt="龍馬（りゅうば）" title="龍馬（りゅうば）" href="ryuuba.html" coords="920,2628,1321,2924" shape="rect">
+    <a href="gamoji.html" class="clickable-area link-10" title="がもじい"></a>
+    <a href="tanukicar.html" class="clickable-area link-11" title="狸自動車（たぬきじどうしゃ）"></a>
+    <a href="kotoro.html" class="clickable-area link-12" title="こーとろ"></a>
 
-        </map>
+    <a href="rojinotanuki.html" class="clickable-area link-13" title="路地の狸（ろじのたぬき）"></a>
+    <a href="ryuuba.html" class="clickable-area link-14" title="龍馬（りゅうば）"></a>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6.1/jquery.rwdImageMaps.min.js"></script>
-
-    <script>
-        $(window).on('load', function() {
-            // 画像が完全に読み込まれてから実行することでズレを防ぐ
-            $('img[usemap]').rwdImageMaps();
-        });
-        
-        // ブラウザのサイズが変わった時も再計算
-        $(window).on('resize', function() {
-            $('img[usemap]').rwdImageMaps();
-        });
-    </script>
+    </div>
 
 </body>
 </html>
